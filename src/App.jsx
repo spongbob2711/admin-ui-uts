@@ -11,6 +11,7 @@ import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
+import { userColumns, productColumns } from "./datatablesource";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -51,7 +52,7 @@ function App() {
                 index
                 element={
                   <RequireAuth>
-                    <List />
+                    <List columns={userColumns} />
                   </RequireAuth>
                 }
               ></Route>
@@ -59,7 +60,7 @@ function App() {
                 path=":userId"
                 element={
                   <RequireAuth>
-                    <Single />
+                    <Single columns={userColumns} />
                   </RequireAuth>
                 }
               ></Route>
@@ -77,7 +78,7 @@ function App() {
                 index
                 element={
                   <RequireAuth>
-                    <List />
+                    <List columns={productColumns} />
                   </RequireAuth>
                 }
               ></Route>
@@ -85,7 +86,7 @@ function App() {
                 path=":productId"
                 element={
                   <RequireAuth>
-                    <Single />
+                    <Single columns={productColumns} />
                   </RequireAuth>
                 }
               ></Route>
