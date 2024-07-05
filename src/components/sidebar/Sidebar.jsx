@@ -12,7 +12,7 @@ import { useContext } from "react";
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   return (
-    <div className="sidebar">
+    <div className="sidebar" data-testid="sidebar">
       <div className="top">
         <Link to="/">
           <span className="logo">Store</span>
@@ -27,7 +27,7 @@ const Sidebar = () => {
             <span>Dashboard</span>
           </li>
           <p className="title">LIST</p>
-          <Link to="/users">
+          <Link to="/users" data-testid="user">
             <li>
               <PersonOutlineIcon className="icon" />
               <span>Users</span>

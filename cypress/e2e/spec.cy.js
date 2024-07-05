@@ -19,5 +19,9 @@ describe("template spec", () => {
     cy.get('[data-testid="submit"]').click();
 
     cy.get("div.home").should("be.visible");
+    cy.get('[data-testid="sidebar"]').should("be.visible");
+    cy.get('[data-testid="user"]').click();
+    cy.url().should("include", "/users");
+    cy.get("div.datatableTitle").contains("USERS");
   });
 });
