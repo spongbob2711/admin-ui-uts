@@ -23,5 +23,19 @@ describe("template spec", () => {
     cy.get('[data-testid="user"]').click();
     cy.url().should("include", "/users");
     cy.get("div.datatableTitle").contains("USERS");
+
+    cy.get('[data-testid="categories"]').click();
+    cy.get('[data-testid="users"]').should("be.visible");
+    cy.get('[data-testid="products"]').should("be.visible");
+    cy.get('[data-testid="categories"]').should("be.visible");
+    cy.get(".addnew").click();
+    cy.get('[data-newid="categories"]').should("be.visible");
+    cy.get("input#name")
+      .should("be.visible")
+      .should("have.attr", "placeholder", "Coffee")
+      .type("Dessert")
+      .should("have.value", "Dessert");
+    cy.get('[data-testid="submit"]').click();
+    cy.get('[data-testid="Dessert"]').click();
   });
 });

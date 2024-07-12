@@ -31,6 +31,7 @@ const Widget = ({ type }) => {
             }}
           />
         ),
+        datatest_id: "users",
       };
       break;
     case "order":
@@ -62,6 +63,39 @@ const Widget = ({ type }) => {
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
         ),
+      };
+      break;
+    case "products":
+      data = {
+        title: "PRODUCTS",
+        isMoney: false,
+        link: "View all products",
+        query: "products",
+        icon: (
+          <ShoppingCartOutlinedIcon
+            className="icon"
+            style={{
+              backgroundColor: "rgba(218, 165, 32, 0.2)",
+              color: "goldenrod",
+            }}
+          />
+        ),
+        datatest_id: "products",
+      };
+      break;
+    case "categories":
+      data = {
+        title: "CATEGORIES",
+        isMoney: false,
+        link: "View all categories",
+        query: "categories",
+        icon: (
+          <MonetizationOnOutlinedIcon
+            className="icon"
+            style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
+          />
+        ),
+        datatest_id: "categories",
       };
       break;
     case "balance":
@@ -120,7 +154,7 @@ const Widget = ({ type }) => {
   }, []);
 
   return (
-    <div className="widget">
+    <div className="widget" data-testid={data.datatest_id}>
       <div className="left">
         <div className="title">{data.title}</div>
         <div className="counter">

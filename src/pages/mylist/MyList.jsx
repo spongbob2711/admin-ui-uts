@@ -4,21 +4,18 @@ import Navbar from "../../components/navbar/Navbar";
 import MyDatatable from "../../components/mydatatable/MyDatatable";
 import Widget from "../../components/widget/Widget";
 
-const MyList = () => {
+const MyList = ({ columns }) => {
   return (
-    <div className="myList">
+    <div className="list">
       <Sidebar />
-      <div className="myListContainer">
+      <div className="listContainer">
         <Navbar />
         <div className="widgets">
           <Widget type="user" />
-          <Widget type="order" />
-          <Widget type="earning" />
-          <Widget type="earning" />
+          <Widget type="products" />
+          <Widget type="categories" />
         </div>
-        <div className="table">
-          <MyDatatable title="All Data" />
-        </div>
+        <MyDatatable columns={columns} />
       </div>
     </div>
   );

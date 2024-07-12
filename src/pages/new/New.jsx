@@ -123,7 +123,7 @@ const New = ({ inputs, title }) => {
             />
           </div>
           <div className="right">
-            <form onSubmit={handleAdd}>
+            <form onSubmit={handleAdd} data-newid={type}>
               <div className="formInput">
                 <label htmlFor="file">
                   Image: <DriveFolderUploadOutlinedIcon className="icon" />
@@ -147,7 +147,11 @@ const New = ({ inputs, title }) => {
                   />
                 </div>
               ))}
-              <button disabled={per !== null && per < 100} type="submit">
+              <button
+                disabled={per !== null && per < 100}
+                type="submit"
+                data-testid="submit"
+              >
                 Send
               </button>
             </form>
