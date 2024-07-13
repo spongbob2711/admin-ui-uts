@@ -1,6 +1,7 @@
 describe("template spec", () => {
   it("passes", () => {
-    cy.visit("http://localhost:5173/");
+    // cy.visit("http://localhost:5173/");
+    cy.visit("https://admin-ui-uts-psi.vercel.app/");
 
     cy.get('[data-testid="form"]').should("exist");
 
